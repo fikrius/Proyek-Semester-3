@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin | Beasiswa</title>
+	<title>Admin | Beasiswa </title>
 </head>
 <body>
 

@@ -30,11 +30,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Beranda<span class="sr-only">(current)</span>
+              <a class="nav-link" href="home-mahasiswa.php">Beranda<span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="monev.php">MoNev</a>
+              <a class="nav-link" href="monev.php">Pengumuman <span class="badge badge-danger">1</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="monev.php">MoNev <span class="badge badge-danger">1</span></a>
             </li>
 
             <li class="nav-item dropdown">
@@ -42,8 +45,8 @@
               Menu
               </a>
               <div class="dropdown-menu text-center" aria-labelledby="Preview">
-                <img src="assets/img/buat-akun.png" alt="gambar profil" class="img-circle">
-                <h6>Nama User</h6>
+                <!-- <img src="" alt="gambar profil" class="img-circle"> -->
+                <h6>Halo, Nama User</h6>
                 <hr>
                 <a class="dropdown-item" href="beranda.php">Keluar</a>
               </div>
@@ -73,31 +76,31 @@
             <h2 class="display-4 text-center">Form Pendaftaran Beasiswa</h2>
             <form>
                       <div class="form-group">
-                        <label class="col-form-label" for="nama">Nama <sup class="bintang">*</sup></label>
+                        <label class="col-form-label" for="nama">Nama <sup class="text-danger">*</sup></label>
                         <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Anda" disabled>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="nim">NIM <sup class="bintang">*</sup></label>
+                        <label class="col-form-label" for="nim">NIM <sup class="text-danger">*</sup></label>
                         <input type="text" class="form-control" name="nim" id="nim" placeholder="Nim Anda" disabled>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="tanggal-lahir">Tanggal Lahir <sup class="bintang">*</sup></label>
+                        <label class="col-form-label" for="tanggal-lahir">Tanggal Lahir <sup class="text-danger">*</sup></label>
                         <input type="date" class="form-control" name="tanggal-lahir" id="tanggal-lahir" placeholder="Tanggal Anda" disabled>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="jenis-kelamin">Jenis Kelamin <sup class="bintang">*</sup></label>
+                        <label class="col-form-label" for="jenis-kelamin">Jenis Kelamin <sup class="text-danger">*</sup></label>
                         <input type="text" class="form-control" name="jenis-kelamin" id="jenis-kelamin" placeholder="P" disabled>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="gaji">Total Gaji Orang Tua <sup class="bintang">*</sup></label>
+                        <label class="col-form-label" for="gaji">Total Gaji Orang Tua/bulan <sup class="text-danger">*</sup></label>
                         <input type="text" class="form-control" name="gaji" id="gaji" required>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="ipk">Semester <sup class="bintang">*</sup></label>
+                        <label class="col-form-label" for="ipk">Semester <sup class="text-danger">*</sup></label>
                         <input type="text" class="form-control" name="semester" id="semester" required>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="ipk">IPK <sup class="bintang">*</sup></label>
+                        <label class="col-form-label" for="ipk">IPK <sup class="text-danger">*</sup></label>
                         <input type="text" class="form-control" name="ipk" id="ipk" required>
                       </div>
                       <div class="form-group">

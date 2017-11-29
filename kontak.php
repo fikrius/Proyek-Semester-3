@@ -69,7 +69,7 @@
         </div>
 
         <div class="row">
-          <div class="col-xl-8 offset-xl-2">
+          <div class="col-md-8 offset-md-2">
             <form>
               <div class="form-group">
                 <label for="nama">Nama</label>
@@ -89,6 +89,12 @@
               </div>
               <button type="submit" class="btn btn-lg btn-primary">Kirim Pesan</button>
             </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <br><br>
           </div>
         </div>
       </div>

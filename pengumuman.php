@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Beranda | Beasiswa</title>
+    <title>Pengumuman | Beasiswa</title>
 
     <!-- CSS BOOTStrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -29,11 +29,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="home-mahasiswa.php">Beranda<span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="pengumuman.php">Pengumuman <span class="badge badge-danger">1</span></a>
             </li>
             <li class="nav-item">
@@ -74,40 +74,12 @@
         <div class="row">
           <div class="col-md-8 offset-md-2">
             <h2 class="display-4 text-center">Form Pendaftaran Beasiswa</h2>
-            <form>
-                      <div class="form-group">
-                        <label class="col-form-label" for="nama">Nama <sup class="text-danger">*</sup></label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Anda" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-form-label" for="nim">NIM <sup class="text-danger">*</sup></label>
-                        <input type="text" class="form-control" name="nim" id="nim" placeholder="Nim Anda" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-form-label" for="tanggal-lahir">Tanggal Lahir <sup class="text-danger">*</sup></label>
-                        <input type="date" class="form-control" name="tanggal-lahir" id="tanggal-lahir" placeholder="Tanggal Anda" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-form-label" for="jenis-kelamin">Jenis Kelamin <sup class="text-danger">*</sup></label>
-                        <input type="text" class="form-control" name="jenis-kelamin" id="jenis-kelamin" placeholder="P" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-form-label" for="gaji">Total Gaji Orang Tua/bulan <sup class="text-danger">*</sup></label>
-                        <input type="text" class="form-control" name="gaji" id="gaji" required>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-form-label" for="ipk">Semester <sup class="text-danger">*</sup></label>
-                        <input type="text" class="form-control" name="semester" id="semester" required>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-form-label" for="ipk">IPK <sup class="text-danger">*</sup></label>
-                        <input type="text" class="form-control" name="ipk" id="ipk" required>
-                      </div>
-                      <div class="form-group">
-                        <button class="btn btn-lg btn-primary" type="submit">
-                            Daftar Beasiswa</button>
-                      </div>
-            </form>
+            <div class="alert alert-success" role="alert">
+              Selamat! Anda lolos seleksi beasiswa! Langkah selanjutnya, silakan datang ke kantor Rektorat untuk mengambil dana beasiswa.
+            </div>
+            <div class="alert alert-danger" role="alert">
+              Maaf, Anda belum lolos seleksi mahasiswa. Anda bisa mendaftar lagi semester depan..
+            </div>
           </div>
         </div>
       </div>

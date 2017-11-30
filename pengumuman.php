@@ -14,7 +14,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS sendiri/custom -->
-    <link href="assets/css/home-mahasiswa.css" rel="stylesheet">
+    <link href="assets/css/pengumuman.css" rel="stylesheet">
 
   </head>
 
@@ -62,18 +62,36 @@
     <header class="masthead">
       <div class="overlay">
         <div class="container">
-          <h1 class="display-1 text-white">Selamat Datang</h1>
+          <div id="clockdiv">
+            <div>
+              <span class="days"></span>
+              <div class="smalltext">Hari</div>
+            </div>
+            <div>
+              <span class="hours"></span>
+              <div class="smalltext">Jam</div>
+            </div>
+            <div>
+              <span class="minutes"></span>
+              <div class="smalltext">Menit</div>
+            </div>
+            <div>
+              <span class="seconds"></span>
+              <div class="smalltext">Detik</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </header>
     <!-- Akhir Header -->
 
     <!-- Section -->
-    <section class="form-daftar">
-      <div class="container">
+    <section class="pengumuman">
+      <div class="container mt-4 mb-4" style="height: 400px;">
         <div class="row">
           <div class="col-md-8 offset-md-2">
-            <h2 class="display-4 text-center">Form Pendaftaran Beasiswa</h2>
+            <h2 class="display-4 text-center mb-3">Pengumuman</h2>
             <div class="alert alert-success" role="alert">
               Selamat! Anda lolos seleksi beasiswa! Langkah selanjutnya, silakan datang ke kantor Rektorat untuk mengambil dana beasiswa.
             </div>
@@ -90,4 +108,5 @@
     <!-- Footer -->
     <?php include "footer.php" ?>
     <!-- Akhir Footer -->
+    <script src="assets/js/countdown.js"></script>
 

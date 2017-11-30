@@ -72,7 +72,7 @@
     <section class="form-daftar">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 offset-md-2">
+          <div class="col-md-8 offset-md-2 mt-4">
             <h2 class="display-4 text-center">Form Pendaftaran Beasiswa</h2>
             <form>
                       <div class="form-group">

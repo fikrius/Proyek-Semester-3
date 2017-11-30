@@ -14,7 +14,7 @@
   <body>
     
     <!-- Navigasi -->
-    <nav class="navbar fixed-top">
+    <nav class="navbar fixed-top bg-dark">
       <div class="container">
         <a class="navbar-brand" href="index.php">BEASISWA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,11 +81,7 @@
     <!-- Akhir section -->
 
     <!-- Footer -->
-    <footer class="py-4">
-      <div class="container">
-        <p class="m-0 text-center text-black">Copyright &copy; Kartini 2017</p>
-      </div>
-    </footer>
+    <?php include "footer.php"; ?>
     <!-- Akhir Footer -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

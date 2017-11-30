@@ -167,5 +167,5 @@
     <!-- Akhir Sistem Beasiswa -->
 
     <!-- Footer -->
-    <?php include "footer.php" ?>
+    <?php include "footer.php"; ?>
     <!-- Akhir Footer -->

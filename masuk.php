@@ -15,7 +15,7 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="col-sm-6 col-md-4 offset-md-4">
                 <div class="account-wall">
                     <img class="profile-img" src="assets/img/profil.png"
                         alt="Profil Masuk">

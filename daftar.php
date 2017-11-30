@@ -1,3 +1,20 @@
+<?php 
+  require "functions.php";
+
+  if( isset($_POST['submit']) ){
+
+    if( daftar($_POST > 0 ) ){
+      echo "<script>
+              alert('User baru berhasil Dibuat!');
+              document.location.href = 'masuk.php';
+            </script>";
+    }else{
+      echo mysqli_error($conn);
+    }
+
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,7 +53,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 col-md-offset-4">
                <div class="account-wall">
-                   <form>
+                   <form action="" method="post">
                       <div class="form-group">
                         <label class="col-form-label" for="nama">Nama <sup class="bintang">*</sup></label>
                         <input type="text" class="form-control" name="nama" id="nama" required>
@@ -65,7 +82,7 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">
                             Daftar</button>
                       </div>
                     </form>

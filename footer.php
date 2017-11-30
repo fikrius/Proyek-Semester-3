@@ -9,5 +9,4 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.bundle.js"></script>
   </body>
-
 </html>

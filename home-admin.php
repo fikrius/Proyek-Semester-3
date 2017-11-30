@@ -76,7 +76,7 @@
               <div class="card-body">
                 <h4 class="card-title">1.200</h4>
                 <p class="card-text">Untuk melihat lengkapnya, silakan klik Lihat Detail</p>
-                <a href="#" class="btn btn-primary">Lihat Detail</a>
+                <a href="jumlah-user.php" class="btn btn-danger">Lihat Detail</a>
               </div>
             </div>
           </div>

@@ -36,7 +36,9 @@ section h2{
 .syarat, .daftar{
   background-color: #f1f1f1;
 }
-
+.syarat p{
+  font-size: 40px;
+}
 /*ol{
   font-size: 20px;
 }*/

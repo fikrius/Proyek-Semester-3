@@ -4,7 +4,7 @@
 	if($conn -> connect_error){
 		die("Koneksi gagal : ".connect_error. "<br>");
 	}
-	echo "Koneksi sukses <br>";
+	echo "";
 
 	function query($query){
 		global $conn;
@@ -91,12 +91,12 @@
 	function daftar($data){
 		global $conn;
 		
-		$nama = $data['nama'];
-		$nim = $data['nim'];
-		$password = $data['password'];
-		$konfirmasi_password = $data['konfirmasi-password'];
-		$tanggal_lahir = $data['tanggal-lahir'];
-		$jenis_kelamin = $data['jenis-kelamin'];
+		$nama = htmlspecialchars(stripslashes($data['nama']));
+		$nim = htmlspecialchars(stripslashes($data['nim']));
+		$password = mysqli_real_escape_string($conn, $data['password']);
+		$konfirmasi_password = mysqli_real_escape_string($conn, $data['konfirmasi']);
+		$tanggal_lahir = $data['tanggal_lahir'];
+		$jenis_kelamin = $data['jenis_kelamin'];
 
 		//cek konfirmasi password
 		if( $password !== $konfirmasi_password ){
@@ -105,13 +105,14 @@
 				</script>";
 			return false;
 		}
-
+		
 		//enkripsi password
 		$password = password_hash($password, PASSWORD_DEFAULT);
 		$konfirmasi_password = $password;
 
 		//tambahkan user baru ke database
-		mysqli_query($conn, "INSERT INTO akun VALUES('', '$nama', '$nim', '$password', '$konfirmasi_password', '$tanggal_lahir', '$jenis_kelamin')");
+		$sql = "INSERT INTO akun VALUES('', '$nama', '$nim', '$password', '$konfirmasi_password', '$tanggal_lahir', '$jenis_kelamin')";
+		mysqli_query($conn, $sql);
 		return mysqli_affected_rows($conn);
 	}
 

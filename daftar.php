@@ -1,9 +1,9 @@
 <?php 
-  require "functions.php";
+  require 'functions.php';
 
-  if( isset($_POST['submit']) ){
+  if( isset($_POST["submit"]) ){
 
-    if( daftar($_POST > 0 ) ){
+    if( daftar($_POST) > 0 ){
       echo "<script>
               alert('User baru berhasil Dibuat!');
               document.location.href = 'masuk.php';
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 col-md-offset-4">
                <div class="account-wall">
-                   <form action="" method="post">
+                   <form action="" method="post>
                       <div class="form-group">
                         <label class="col-form-label" for="nama">Nama <sup class="bintang">*</sup></label>
                         <input type="text" class="form-control" name="nama" id="nama" required>
@@ -67,23 +67,22 @@
                         <input type="password" class="form-control" name="password" id="password" required>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="konfirmasi-password">Konfirmasi Password <sup class="bintang">*</sup></label>
-                        <input type="password" class="form-control" name="konfirmasi-password" id="konfirmasi-password" required>
+                        <label class="col-form-label" for="konfirmasi">Konfirmasi Password <sup class="bintang">*</sup></label>
+                        <input type="password" class="form-control" name="konfirmasi" id="konfirmasi" required>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="tanggal-lahir">Tanggal Lahir <sup class="bintang">*</sup></label>
-                        <input type="date" class="form-control" name="tanggal-lahir" id="tanggal-lahir" required>
+                        <label class="col-form-label" for="tanggal_lahir">Tanggal Lahir <sup class="bintang">*</sup></label>
+                        <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" required>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="jenis-kelamin">Jenis Kelamin <sup class="bintang">*</sup></label>
-                        <select id="jenis-kelamin" name="jenis-kelamin" required>
+                        <label class="col-form-label" for="jenis_kelamin">Jenis Kelamin <sup class="bintang">*</sup></label>
+                        <select id="jenis_kelamin" name="jenis_kelamin" required>
                           <option value="p">Pria</option>
                           <option value="w">Wanita</option>
                         </select>
                       </div>
                       <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">
-                            Daftar</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Daftar</button>
                       </div>
                     </form>
                 </div>
@@ -105,5 +104,7 @@
     <script src="assets/js/jquery-3.2.1.min"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Include validate password -->
+    <!-- <script type="assets/js/validatePassword.js"></script> -->
   </body>
 </html>

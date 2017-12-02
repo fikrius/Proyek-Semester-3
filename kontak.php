@@ -53,7 +53,8 @@
     <header class="masthead">
       <div class="overlay">
         <div class="container">
-          <h2 class="display-4 text-white">"Saran dan masukan Anda sangat berguna bagi kami"</h2>
+          <h1 class="display-1 text-white">Kontak</h1>
+          <h2 class="display-4 text-white">"Kritik dan saran sangat beguna bagi kami"</h2>
         </div>
       </div>
     </header>
@@ -63,13 +64,11 @@
     <section class="kontak" id="kontak">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center">
-            <h2>Kontak</h2>
+          <div class="col-md-12">
+            <br>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
+          <div class="col-md-8 offset-md-2 mt-5">
             <form>
               <div class="form-group">
                 <label for="nama">Nama</label>

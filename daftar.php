@@ -3,14 +3,14 @@
 
   if( isset($_POST["submit"]) ){
 
-    if( daftar($_POST) > 0 ){
-      echo "<script>
-              alert('User baru berhasil Dibuat!');
-              document.location.href = 'masuk.php';
-            </script>";
-    }else{
-      echo mysqli_error($conn);
-    }
+      if( daftar($_POST) > 0 ){
+        echo "<script>
+                alert('User baru berhasil Dibuat!');
+                document.location.href = 'masuk.php';
+              </script>";
+      }else{
+        echo mysqli_error($conn);
+      }
 
   }
 ?>
@@ -32,28 +32,25 @@
     
     <!-- Navigasi -->
     <nav class="navbar fixed-top bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="index.php">BEASISWA</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        </button>
-            <a class="btn btn-primary" role="button" href="masuk.php">Masuk
-            </a>
-      </div>
+      
+        
+          <a class="navbar-brand" href="index.php">BEASISWA</a>
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          </button> -->
+          <a class="btn btn-primary" role="button" href="masuk.php">Masuk
+          </a>
+        
+      
     </nav>
     <!-- Akhir Navigasi -->
     
     <!-- section -->
     <section class="main">
       <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12">
-            <h1>Buat Akun Beasiswamu</h1>
-          </div>
-        </div>
         <div class="row">
-            <div class="col-sm-12 col-md-4 col-md-offset-4">
-               <div class="account-wall">
-                   <form action="" method="post>
+            <div class="col-sm-6 col-md-4">
+                <div class="account-wall">
+                    <form class="form-signin" action="" method="post">
                       <div class="form-group">
                         <label class="col-form-label" for="nama">Nama <sup class="bintang">*</sup></label>
                         <input type="text" class="form-control" name="nama" id="nama" required>
@@ -87,24 +84,12 @@
                     </form>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-8 text-center d-none d-lg-block d-md-block d-sm-none d-xs-none">
-              <h5>Kompatibel untuk semua layar perangkat Anda</h5>
-              <img src="assets/img/devices.png">
-            </div>
-          </div>
-       </div>
+            <div class="col-md-4 offset-md-2"></div>
+        </div>
+    </div>
     </section>
     <!-- Akhir section -->
 
     <!-- Footer -->
-    <?php include "footer.php"; ?>
+    <!-- <?php ; ?> -->
     <!-- Akhir Footer -->
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="assets/js/jquery-3.2.1.min"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Include validate password -->
-    <!-- <script type="assets/js/validatePassword.js"></script> -->
-  </body>
-</html>

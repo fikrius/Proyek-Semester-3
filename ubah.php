@@ -21,7 +21,7 @@
 			echo "
 				<script>
 					alert('Data gagal diubah');
-					document.location.href = 'jumlah-user.php';
+					document.location.href = 'ubah.php';
 				</script>
 			";
 		}
@@ -98,15 +98,12 @@
                         <input type="text" class="form-control" name="nim" id="nim" value="<?php echo $mhs['nim']; ?>" required>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="tanggal-lahir">Tanggal Lahir</label>
-                        <input type="date" class="form-control" name="tanggal-lahir" id="tanggal-lahir" value="<?php echo $mhs['tanggal_lahir']; ?>" required>
+                        <label class="col-form-label" for="tanggal_lahir">Tanggal Lahir</label>
+                        <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" value="<?php echo $mhs['tanggal_lahir']; ?>" required>
                       </div>
                       <div class="form-group">
-                        <label class="col-form-label" for="jenis-kelamin">Jenis Kelamin</label>
-                        <select id="jenis-kelamin" name="jenis-kelamin">
-                        	<option value="<?php echo $mhs['jenis_kelamin']; ?>">P</option>
-                        	<option>W</option>
-                        </select>
+                        <label class="col-form-label" for="jenis_kelamin">Jenis Kelamin</label>
+                        <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" value="<?php echo $mhs['jenis_kelamin']; ?>" required>
                       </div>
                       <div class="form-group">
                         <button class="btn btn-lg btn-primary" type="submit" name="submit">

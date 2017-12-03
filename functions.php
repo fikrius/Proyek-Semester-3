@@ -16,39 +16,17 @@
 		return $rows;
 	}
 
-	function create($query){
-		global $conn;
-		$q = $conn -> query($query);
-		if($q === TRUE){
-			echo "";
-		}else{
-			echo "";
-		}
-		$conn -> close();
-	}
-
-	function create_tabel($query){
-		global $conn;
-		$q = $conn -> query($query);
-		if($conn -> connect_error){
-			die("Tabel gagal : ".connect_error."<br>");
-		}
-		echo "Tabel sukses <br>";
-		$conn -> close();
-	}
-
 	function insert($data){
 		global $conn;
 
 		$nama = htmlspecialchars($data['nama']);
 		$nim = htmlspecialchars($data['nim']);
 		$password = htmlspecialchars($data['password']);
-		$konfirmasi_password = htmlspecialchars($data['konfirmasi_password']);
 		$tanggal_lahir = htmlspecialchars($data['tanggal_lahir']);
 		$jenis_kelamin = htmlspecialchars($data['jenis_kelamin']);
 
 		$sql = "INSERT INTO akun VALUES(
-				'', '$nama', '$nim', '$password', '$konfirmasi_password', '$tanggal_lahir', '$jenis_kelamin'
+				'', '$nama', '$nim', '$password', '$tanggal_lahir', '$jenis_kelamin'
 			)";
 
 		mysqli_query($conn, $sql);
@@ -62,7 +40,6 @@
 		mysqli_query($conn, $sql);
 		return mysqli_affected_rows($conn);
 
-		$conn -> close();
 	}
 
 	function ubah($data){
@@ -71,10 +48,8 @@
 		$id = $data['id'];
 		$nama = htmlspecialchars($data['nama']);
 		$nim = htmlspecialchars($data['nim']);
-		$password = htmlspecialchars($data['password']);
-		$konfirmasi_password = htmlspecialchars($data['konfirmasi_password']);
-		$tanggal_lahir = htmlspecialchars($data['tanggal-lahir']);
-		$jenis_kelamin = htmlspecialchars($data['jenis-kelamin']);
+		$tanggal_lahir = $data['tanggal_lahir'];
+		$jenis_kelamin = htmlspecialchars($data['jenis_kelamin']);
 
 		$sql = "UPDATE akun SET 
 				nama = '$nama',
@@ -98,6 +73,21 @@
 		$tanggal_lahir = $data['tanggal_lahir'];
 		$jenis_kelamin = $data['jenis_kelamin'];
 
+		//cek apakah nim sudah terdaftar atau belum
+	    $sql2 = "SELECT * FROM akun WHERE nim='$nim'";
+	    $result = mysqli_query($conn, $sql2);
+	    if( mysqli_num_rows($result) === 1 ){
+	      $row = mysqli_fetch_assoc($result);
+	      if( $row ){
+	        echo "<script>
+	                alert('NIM yang Anda masukkan sudah terdaftar!');
+	                document.location.href = 'daftar.php';
+	              </script>";
+	        
+	      }
+	      return false;
+	    }
+
 		//cek konfirmasi password
 		if( $password !== $konfirmasi_password ){
 			echo "<script>
@@ -105,13 +95,12 @@
 				</script>";
 			return false;
 		}
-		
 		//enkripsi password
 		$password = password_hash($password, PASSWORD_DEFAULT);
-		$konfirmasi_password = $password;
-
+		
+		
 		//tambahkan user baru ke database
-		$sql = "INSERT INTO akun VALUES('', '$nama', '$nim', '$password', '$konfirmasi_password', '$tanggal_lahir', '$jenis_kelamin')";
+		$sql = "INSERT INTO akun VALUES('', '$nama', '$nim', '$password', '$tanggal_lahir', '$jenis_kelamin')";
 		mysqli_query($conn, $sql);
 		return mysqli_affected_rows($conn);
 	}

@@ -1,3 +1,20 @@
+<?php 
+  
+  require "functions.php";
+
+  if( isset($_POST['submit']) ){
+    if( kontak($_POST) > 0 ){
+        echo "<script>
+                alert('Masukan Anda terkirim!');
+                document.location.href = 'kontak.php';
+              </script>";
+      }else{
+        echo mysqli_error($conn);
+      }
+  }
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,24 +86,20 @@
           </div>
 
           <div class="col-md-8 offset-md-2 mt-5">
-            <form>
+            <form action="" method="post">
               <div class="form-group">
-                <label for="nama">Nama</label>
+                <label for="nama">Nama<sup class="text-danger">*</sup></label>
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Masukkan nama" required>
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email<sup class="text-danger">*</sup></label>
                 <input type="email" id="email" name="email" class="form-control" placeholder="Masukkan email" required>
               </div>
               <div class="form-group">
-                <label for="telp">No Telepon</label>
-                <input type="tel" id="telp" name="telp" class="form-control" placeholder="Masukkan No Telepon">
+                <label for="pesan">Pesan<sup class="text-danger">*</sup></label>
+                <textarea name="pesan" class="form-control" rows="10" placeholder="Masukkan pesan" required></textarea>
               </div>
-              <div class="form-group">
-                <label for="pesan">Pesan</label>
-                <textarea class="form-control" rows="10" placeholder="Masukkan pesan" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-lg btn-primary">Kirim Pesan</button>
+              <button name="submit" type="submit" class="btn btn-lg btn-primary">Kirim Pesan</button>
             </form>
           </div>
         </div>

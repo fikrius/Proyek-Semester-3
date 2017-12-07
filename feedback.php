@@ -1,11 +1,8 @@
 <?php 
 	include "functions.php";
 	//Menampilkan semua data mahasiswa di tabel akun
-	$sql = "SELECT * FROM akun";
+	$sql = "SELECT * FROM kontak";
 	$result = mysqli_query($conn, $sql);
-
-  //jumlah feedback
-  $feedback = hitung_feedback();
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +44,8 @@
               <a class="nav-link" href="home-admin.php">Dasbor<span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="feedback.php">Feedback<span class="badge badge-danger"><?php echo $feedback; ?>
+            <li class="nav-item active">
+              <a class="nav-link" href="feedback.php">Feedback<span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item dropdown">
@@ -73,15 +70,13 @@
     <section class="jumlah-user">
       <div class="container mt-5">
         <div class="row-md-12">
-          <table id="table_user" class="table table-hover">
+          <table id="table_feedback" class="table table-hover">
             <thead>
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
-                <th scope="col">Nim</th>
-                <th scope="col">Tanggal Lahir</th>
-                <th scope="col">Jenis Kelamin</th>
-                <th scope="col">Aksi</th>
+                <th scope="col">Email</th>
+                <th scope="col">Feedback</th>
               </tr>
             </thead>
 
@@ -91,10 +86,9 @@
 	                <tr>
 	                  <td><?php echo $i; ?></td>
 	                  <td><?php echo $row['nama']; ?></td>
-	                  <td><?php echo $row['nim']; ?></td>
-	                  <td><?php echo $row['tanggal_lahir']; ?></td>
-	                  <td><?php echo $row['jenis_kelamin']; ?></td>
-	                  <td><a href="ubah.php?id_mhs=<?php echo $row['id_mhs']; ?>" class="btn btn-primary">Ubah</a> | <a href="hapus_user.php?id_mhs=<?php echo $row['id_mhs']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data?')">Hapus</a></td>
+	                  <td><?php echo $row['email']; ?></td>
+	                  <td><?php echo $row['pesan']; ?></td>
+	                  <td><a href="hapus_kontak.php?id_kontak=<?php echo $row['id_kontak']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus pesan?')">Hapus</a></td>
 	                </tr>
 	            	<?php $i++; ?>
             	<?php endwhile; ?>
@@ -108,7 +102,7 @@
 
     <script>
       $(document).ready(function(){
-          $('#table_user').DataTable();
+          $('#table_feedback').DataTable();
       })
     </script>
 

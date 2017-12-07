@@ -1,3 +1,11 @@
+<?php  
+  require "functions.php";
+  //menghitung jumlah data di dalam database
+  $user = hitung_user();
+  $feedback = hitung_feedback();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +41,10 @@
               <a class="nav-link" href="home-admin.php">Dasbor<span class="sr-only">(current)</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.php">Feedback<span class="badge badge-danger"><?php echo $feedback; ?></span>
+              </a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" role="button" aria-haspopup="true" aria-expanded="false">
               Menu
@@ -61,7 +73,7 @@
             <hr class="my-4">
             <p>Admin dapat mengelola data pendaftar Beasiswa, dan dapat menentukan waktu pengumuman.</p>
             <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Pelajari</a>
+              <a class="btn btn-success btn-lg" href="pelajari.php" role="button">Pelajari</a>
             </p>
           </div>
           <!-- Akhir Jumbotron -->
@@ -74,9 +86,9 @@
                 Jumlah Akun User
               </div>
               <div class="card-body">
-                <h4 class="card-title">1.200</h4>
+                <h4 class="card-title"><?php echo $user; ?></h4>
                 <p class="card-text">Untuk melihat lengkapnya, silakan klik Lihat Detail</p>
-                <a href="jumlah-user.php" class="btn btn-danger">Lihat Detail</a>
+                <a href="jumlah-user.php" class="btn btn-primary">Lihat Detail</a>
               </div>
             </div>
           </div>
@@ -86,7 +98,7 @@
                 Jumlah Pendaftar Beasiswa
               </div>
               <div class="card-body">
-                <h4 class="card-title">1.200</h4>
+                <h4 class="card-title"><?php echo $feedback; ?></h4>
                 <p class="card-text">Untuk melihat lengkapnya, silakan klik Lihat Detail</p>
                 <a href="#" class="btn btn-primary">Lihat Detail</a>
               </div>

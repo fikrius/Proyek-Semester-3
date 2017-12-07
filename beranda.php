@@ -16,6 +16,9 @@
     <!-- CSS sendiri/custom -->
     <link href="assets/css/beranda.css" rel="stylesheet">
 
+    <!-- Data Tables -->
+    <link href="assets/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -30,7 +33,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Beranda<span class="sr-only">(current)</span>
+              <a class="nav-link" href="beranda.php">Beranda<span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">

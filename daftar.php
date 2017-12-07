@@ -34,7 +34,7 @@
     <nav class="navbar fixed-top bg-dark">
       
         
-          <a class="navbar-brand" href="index.php">BEASISWA</a>
+          <a class="navbar-brand" href="beranda.php">BEASISWA</a>
           <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           </button> -->
           <a class="btn btn-primary" role="button" href="masuk.php">Masuk

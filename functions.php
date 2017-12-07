@@ -41,6 +41,12 @@
 		return mysqli_affected_rows($conn);
 
 	}
+	function delete_kontak($id){
+		global $conn;
+		$sql = "DELETE FROM kontak WHERE id_kontak=$id";
+		mysqli_query($conn, $sql);
+		return mysqli_affected_rows($conn);
+	}
 
 	function ubah($data){
 		global $conn;
@@ -103,6 +109,40 @@
 		$sql = "INSERT INTO akun VALUES('', '$nama', '$nim', '$password', '$tanggal_lahir', '$jenis_kelamin')";
 		mysqli_query($conn, $sql);
 		return mysqli_affected_rows($conn);
+	}
+
+	function kontak($data){
+		global $conn;
+
+		$nama = htmlspecialchars($data['nama']);
+		$email = htmlspecialchars($data['email']);
+		$pesan = htmlspecialchars($data['pesan']);
+
+		$sql = "INSERT INTO kontak VALUES(
+				'', '$nama', '$email', '$pesan'
+			)";
+
+		mysqli_query($conn, $sql);
+		return mysqli_affected_rows($conn);
+		$conn -> close();
+	}
+
+	function hitung_user(){
+		global $conn;
+	 	 $sql = "SELECT * FROM akun";
+	 	 $query = mysqli_query($conn, $sql);
+	 	 $count = mysqli_num_rows($query);
+
+	 	 return $count;
+	}
+
+	function hitung_feedback(){
+		global $conn;
+	 	 $sql = "SELECT * FROM kontak";
+	 	 $query = mysqli_query($conn, $sql);
+	 	 $count = mysqli_num_rows($query);
+
+	 	 return $count;
 	}
 
 ?>

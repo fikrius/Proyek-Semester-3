@@ -1,8 +1,16 @@
 <?php  
-  require "functions.php";
+  session_start();
+
+  if( !isset($_SESSION["login"]) ){
+    header("Location: masuk.php");
+    exit;
+  }
+
+  require "controller/functions.php";
   //menghitung jumlah data di dalam database
   $user = hitung_user();
   $feedback = hitung_feedback();
+  $pendaftar_beasiswa = hitung_pendaftar_beasiswa();
 
 ?>
 
@@ -31,7 +39,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">ADMIN BEASISWA</a>
+        <img src="assets/img/logo.png" style="width: 50px;">
+        <a class="navbar-brand" href="home-admin.php">ADMIN BEASISWA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,7 +62,7 @@
                 <!-- <img src="" alt="gambar profil" class="img-circle"> -->
                 <h6>Admin</h6>
                 <hr>
-                <a class="dropdown-item" href="beranda.php">Keluar</a>
+                <a class="dropdown-item" href="session/logout.php">Keluar</a>
               </div>
             </li>
 
@@ -98,9 +107,9 @@
                 Jumlah Pendaftar Beasiswa
               </div>
               <div class="card-body">
-                <h4 class="card-title"><?php echo $feedback; ?></h4>
+                <h4 class="card-title"><?php echo $pendaftar_beasiswa; ?></h4>
                 <p class="card-text">Untuk melihat lengkapnya, silakan klik Lihat Detail</p>
-                <a href="#" class="btn btn-primary">Lihat Detail</a>
+                <a href="jumlah-pendaftar-beasiswa.php" class="btn btn-primary">Lihat Detail</a>
               </div>
             </div>
           </div>
@@ -113,7 +122,7 @@
                 Pendaftar Laki-laki
               </div>
               <div class="card-body">
-                <h4 class="card-title">1.200</h4>
+                <h4 class="card-title">0</h4>
                 <p class="card-text">Untuk melihat lengkapnya, silakan klik Lihat Detail</p>
                 <a href="#" class="btn btn-primary">Lihat Detail</a>
               </div>
@@ -125,7 +134,7 @@
                 Pendaftar Perempuan
               </div>
               <div class="card-body">
-                <h4 class="card-title">1.200</h4>
+                <h4 class="card-title">0</h4>
                 <p class="card-text">Untuk melihat lengkapnya, silakan klik Lihat Detail</p>
                 <a href="#" class="btn btn-primary">Lihat Detail</a>
               </div>

@@ -1,5 +1,12 @@
 <?php  
-	require "functions.php";
+	session_start();
+
+	  if( !isset($_SESSION["login"]) ){
+	    header("Location: masuk.php");
+	    exit;
+	  }
+	
+	require "controller/functions.php";
 	$id = $_GET['id_kontak'];
 
 	if( delete_kontak($id) > 0 ){

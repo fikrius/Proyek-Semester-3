@@ -1,5 +1,7 @@
 <?php  
-  require "functions.php";
+  session_start();
+  
+  require "controller/functions.php";
 
   if( isset($_POST['submit']) ){
     $nim = $_POST["nim"];
@@ -14,10 +16,20 @@
       //mengecek password
       $row = mysqli_fetch_assoc($result);
       if(password_verify($password, $row["password"])){
+        //set session
+        $_SESSION["login"] = true;
+
+        //membuat session untuk ditampilkan di home-mahasiswa
+        
+        $_SESSION['nama'] = $row['nama']; // set session untuk nama
+        $_SESSION['nim'] = $row['nim']; // set session untuk nim
+        $_SESSION['tanggal_lahir'] = $row['tanggal_lahir']; // set session untuk tanggal lahir
+        $_SESSION['jenis_kelamin'] = $row['jenis_kelamin']; // set session untuk jkel
         header("Location: home-mahasiswa.php");
         exit;
       }
     }else if( $nim === 'admin' && $password === 'admin' ){
+      $_SESSION["login"] = true;
       header("Location: home-admin.php");
       exit;
     }
@@ -25,9 +37,6 @@
     $error = true;
 
   }
-
-  
-
 
 
 ?>
@@ -46,9 +55,6 @@
 
   </head>
   <body>
-    <?php if( isset($error) ): ?>
-      <p style="color: red; font-style: italic" class="text-center">NIM atau password salah!</p>
-    <?php endif; ?>
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-4 offset-md-4">
@@ -59,6 +65,9 @@
                     <form class="form-signin" action="" method="post">
                       <input name="nim" type="text" class="form-control" placeholder="Nim" required autofocus>
                       <input name="password" type="password" class="form-control" placeholder="Password" required>
+                      <?php if( isset($error) ): ?>
+                        <p style="color: red; font-style: italic" class="text-center">NIM atau password salah!</p>
+                      <?php endif; ?>
                       <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">
                           Masuk</button>
                       <label class="checkbox pull-left">

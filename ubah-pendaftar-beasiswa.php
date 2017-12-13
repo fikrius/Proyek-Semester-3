@@ -10,10 +10,10 @@
 	//mengecek bila tombol submit ditekan
 
 	//Ambil data id dari url
-	$id = $_GET['id_mhs'];
+	$id = $_GET['id_bea'];
 
 	//Query data mahasiswa berdasarkan id
-	$mhs = query("SELECT * FROM akun WHERE id_mhs = $id")[0];
+	$bea = query("SELECT * FROM bea WHERE id_bea = $id")[0];
 
 	if(isset( $_POST["submit"]) ){
 		//mengecek apakah data sudah ditambahkan atau belum
@@ -21,14 +21,14 @@
 			echo "
 				<script>
 					alert('Data berhasil diubah');
-					document.location.href = 'jumlah-user.php';
+					document.location.href = 'jumlah-pendaftar-beasiswa.php';
 				</script>
 			";
 		}else{
 			echo "
 				<script>
 					alert('Data gagal diubah');
-					document.location.href = 'ubah.php';
+					document.location.href = 'jumlah-pendaftar-beasiswa.php';
 				</script>
 			";
 		}
@@ -60,7 +60,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">ADMIN BEASISWA</a>
+        <a class="navbar-brand" href="home-admin.php">ADMIN BEASISWA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -91,26 +91,26 @@
     <!-- Form Ubah -->
     <section class="ubah">
     	<div class="container mt-5">
-    		<h4 class="text-center">Ubah data akun yang terdaftar apabila terjadi kekeliruan input</h4>
+    		<h4 class="text-center">Ubah data beasiswa mahasiswa yang terdaftar apabila terjadi kekeliruan input</h4>
     		<div class="row">
     			<div class="col-md-8 offset-md-2">
     				<form action="" method="post">
-    				  <input type="hidden" name="id" value="<?php echo $mhs['id_mhs']; ?>">
+    				  <input type="hidden" name="id" value="<?php echo $bea['id_bea']; ?>">
                       <div class="form-group">
                         <label class="col-form-label" for="nama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $mhs['nama']; ?>" required>
+                        <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $bea['nama']; ?>" required>
                       </div>
                       <div class="form-group">
                         <label class="col-form-label" for="nim">NIM</label>
-                        <input type="text" class="form-control" name="nim" id="nim" value="<?php echo $mhs['nim']; ?>" required>
+                        <input type="text" class="form-control" name="nim" id="nim" value="<?php echo $bea['nim']; ?>" required>
                       </div>
                       <div class="form-group">
                         <label class="col-form-label" for="tanggal_lahir">Tanggal Lahir</label>
-                        <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" value="<?php echo $mhs['tanggal_lahir']; ?>" required>
+                        <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" value="<?php echo $bea['tanggal_lahir']; ?>" required>
                       </div>
                       <div class="form-group">
                         <label class="col-form-label" for="jenis_kelamin">Jenis Kelamin</label>
-                        <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" value="<?php echo $mhs['jenis_kelamin']; ?>" required>
+                        <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" value="<?php echo $bea['jenis_kelamin']; ?>" required>
                       </div>
                       <div class="form-group">
                         <button class="btn btn-lg btn-primary" type="submit" name="submit">

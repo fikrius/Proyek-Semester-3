@@ -26,7 +26,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">BEASISWA</a>
+        <img src="assets/img/logo.png" style="width: 50px;">
+        <a class="navbar-brand" href="beranda.php">BEASISWA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -68,14 +69,14 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <h2 class="text-center">Apa itu --- ?</h2>
+            <h2 class="text-center">Beasiswa</h2>
             <hr>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
-            <p>Sehubungan dengan adanya surat dari Kementerian Pendidikan dan Kebudayaan Koordinasi Perguruan Tinggi Swasta (Kopertis) Wilayah V nomor: 2069/K5/KM/2017 tertanggal 30 Maret 2017 tentang Beasiswa Peningkatan Prestasi Akademik (PPA) Tahun 2017, kami informasikan kepada seluruh mahasiswa aktif Universitas Islam Indonesia jenjang S1 dan D3 untuk dapat memenuhi tawaran tersebut.</p>
+            <p>Aplikasi berbasis web yang dibuat untuk memudahkan mahasiswa Fakultas Teknologi Industri Universitas Islam Indonesia dalam mendaftar beasiswa. </p>
           </div>
         </div>
       </div>
@@ -101,12 +102,15 @@
         <div class="row">
           <div class="col-md-11 offset-md-1">
             <ol>
-              <li> Formulir pendaftaran</li>
-                <li> Slip gaji orang tua yang telah dilegalisir</li>
-                <li> Krs</li>
-                <li> Fotocopy KTM dan KTP</li>
-                <li> Fotocopy buku tabungan yang telah dilegalisir</li>
+              <li> Mahasiswa aktif Fakultas Teknologi Industri</li>
+              <li> Mengisi formulir pendaftaran online di website Beasiswa</li>
+                <li> Slip gaji orang tua yang telah dilegalisir <sup class="text-danger">*</sup></li>
+                <li> Krs <sup class="text-danger">*</sup></li>
+                <li> Fotocopy KTM dan KTP <sup class="text-danger">*</sup></li>
+                <li> Fotocopy buku tabungan yang telah dilegalisir <sup class="text-danger">*</sup></li>
+
             </ol>
+            <p>Keterangan <sup class="text-danger">*</sup> : Dilampirkan saat verifikasi berkas</p>
           </div>
         </div>
       </div>

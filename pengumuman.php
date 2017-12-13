@@ -1,3 +1,12 @@
+<?php  
+  session_start();
+
+  if( !isset($_SESSION["login"]) ){
+    header("Location: masuk.php");
+    exit;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +32,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">BEASISWA</a>
+        <img src="assets/img/logo.png" style="width: 50px;">
+        <a class="navbar-brand" href="home-mahasiswa.php">BEASISWA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,10 +44,10 @@
               </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="pengumuman.php">Pengumuman <span class="badge badge-danger">1</span></a>
+              <a class="nav-link" href="pengumuman.php">Pengumuman</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="monev.php">MoNev <span class="badge badge-danger">1</span></a>
+              <a class="nav-link" href="monev.php">MoNev <span class="badge badge-danger">x</span></a>
             </li>
 
             <li class="nav-item dropdown">
@@ -46,7 +56,7 @@
               </a>
               <div class="dropdown-menu text-center" aria-labelledby="Preview">
                 <!-- <img src="" alt="gambar profil" class="img-circle"> -->
-                <h6>Halo, Nama User</h6>
+                <h6>Halo, <?php echo $_SESSION['nama'] ;?></h6>
                 <hr>
                 <a class="dropdown-item" href="beranda.php">Keluar</a>
               </div>

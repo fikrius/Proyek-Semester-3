@@ -1,5 +1,12 @@
 <?php 
-	include "functions.php";
+  session_start();
+
+  if( !isset($_SESSION["login"]) ){
+    header("Location: masuk.php");
+    exit;
+  }
+
+	include "controller/functions.php";
 	//Menampilkan semua data mahasiswa di tabel akun
 	$sql = "SELECT * FROM kontak";
 	$result = mysqli_query($conn, $sql);
@@ -34,7 +41,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">ADMIN BEASISWA</a>
+        <img src="assets/img/logo.png" style="width: 50px;">
+        <a class="navbar-brand" href="home-admin.php">ADMIN BEASISWA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -100,7 +108,7 @@
     </section>
     <!-- Akhir tabel -->
 
-    <script>
+    <script type="text/javascript">
       $(document).ready(function(){
           $('#table_feedback').DataTable();
       })
@@ -111,5 +119,5 @@
     <!-- Akhir Footer -->
 
     <!-- Include dataTables  -->
-    <script src=assets/datatables/js/jquery.dataTables.min.js></script>
-    <script src=assets/datatables/js/dataTables.bootstrap.js></script>
+    <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/js/dataTables.bootstrap.js"></script>

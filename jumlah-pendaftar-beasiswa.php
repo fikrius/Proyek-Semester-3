@@ -8,7 +8,7 @@
 
 	require "controller/functions.php";
 	//Menampilkan semua data mahasiswa di tabel akun
-	$sql = "SELECT * FROM akun";
+	$sql = "SELECT * FROM bea";
 	$result = mysqli_query($conn, $sql);
 
   //jumlah feedback
@@ -102,7 +102,7 @@
 	                  <td><?php echo $row['nim']; ?></td>
 	                  <td><?php echo $row['tanggal_lahir']; ?></td>
 	                  <td><?php echo $row['jenis_kelamin']; ?></td>
-	                  <td><a href="ubah.php?id_mhs=<?php echo $row['id_mhs']; ?>" class="btn btn-primary">Ubah</a> | <a href="hapus_user.php?id_mhs=<?php echo $row['id_mhs']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data?')">Hapus</a></td>
+	                  <td><a href="ubah_pendaftar_beasiswa.php?id_bea=<?php echo $row['id_bea']; ?>" class="btn btn-primary">Ubah</a> | <a href="hapus_pendaftar_beasiswa.php?id_bea=<?php echo $row['id_bea']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data?')">Hapus</a></td>
 	                </tr>
 	            	<?php $i++; ?>
             	<?php endwhile; ?>

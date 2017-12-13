@@ -1,5 +1,5 @@
-<?php 
-  require 'functions.php';
+<?php
+  require 'controller/functions.php';
 
   if( isset($_POST["submit"]) ){
 
@@ -33,8 +33,9 @@
     <!-- Navigasi -->
     <nav class="navbar fixed-top bg-dark">
       
+      <img src="assets/img/logo.png" style="width: 50px;">
         
-          <a class="navbar-brand" href="beranda.php">BEASISWA</a>
+          <a class="navbar-brand" style="color: white;" href="beranda.php">BEASISWA</a>
           <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           </button> -->
           <a class="btn btn-primary" role="button" href="masuk.php">Masuk

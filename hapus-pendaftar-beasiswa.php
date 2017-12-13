@@ -7,20 +7,20 @@
 	  }
 	
 	require "controller/functions.php";
-	$id = $_GET['id_mhs'];
+	$id = $_GET['id_bea'];
 
-	if( delete($id) > 0 ){
+	if( delete_pendaftar_beasiswa($id) > 0 ){
 		echo "
 			<script>
 				alert('Data berhasil dihapus');
-				document.location.href = 'jumlah-user.php';
+				document.location.href = 'jumlah-pendaftar-beasiswa.php';
 			</script>
 		";
 	}else{
 		echo "
 			<script>
 				alert('Data gagal dihapus');
-				document.location.href = 'jumlah-user.php';
+				document.location.href = 'jumlah-pendaftar-beasiswa.php';
 			</script>
 		";
 	}

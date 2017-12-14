@@ -26,6 +26,8 @@
 
     <title>Admin | Beasiswa</title>
 
+    <?php include "favicon.html"; ?>
+
     <!-- CSS BOOTStrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -147,6 +149,9 @@
     </section>
     <!-- Akhir Isi -->
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+
     <!-- Footer -->
-    <?php include "footer.php" ?>
+    <?php include "footer.php" ;?>
     <!-- Akhir Footer -->

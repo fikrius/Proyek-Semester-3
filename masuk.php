@@ -49,6 +49,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Masuk | Beasiswa</title>
 
+    <?php include "favicon.html"; ?>
+
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/masuk.css">

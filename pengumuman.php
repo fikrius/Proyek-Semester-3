@@ -19,6 +19,8 @@
 
     <title>Pengumuman | Beasiswa</title>
 
+    <?php include "favicon.html"; ?>
+
     <!-- CSS BOOTStrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 

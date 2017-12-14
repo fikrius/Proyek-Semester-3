@@ -76,6 +76,35 @@
 		return mysqli_affected_rows($conn);
 	}
 
+	function ubah_pendaftar_beasiswa($data){
+		global $conn;
+
+		$id = $data['id'];
+		$nama = $data['nama'];
+		$nim = $data['nim'];
+		$tanggal_lahir = $data['tanggal_lahir'];
+		$jenis_kelamin = $data['jenis_kelamin'];
+		$gaji = htmlspecialchars($data['gaji']);
+		$saudara = htmlspecialchars($data['saudara']);
+		$jurusan = $data['jurusan'];
+		$ipk = htmlspecialchars($data['ipk']);
+
+		$sql = "UPDATE bea SET 
+				nama = '$nama',
+				nim = '$nim',
+				tanggal_lahir = '$tanggal_lahir',
+				jenis_kelamin = '$jenis_kelamin',
+				gaji = '$gaji',
+				saudara = '$saudara',
+				jurusan = '$jurusan',
+				ipk = '$ipk'
+				WHERE id_bea = $id
+				";
+
+		mysqli_query($conn, $sql);
+		return mysqli_affected_rows($conn);
+	}
+
 	function daftar($data){
 		global $conn;
 		

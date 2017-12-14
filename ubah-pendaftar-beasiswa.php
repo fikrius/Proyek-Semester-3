@@ -17,7 +17,7 @@
 
 	if(isset( $_POST["submit"]) ){
 		//mengecek apakah data sudah ditambahkan atau belum
-		if( ubah($_POST) > 0 ){
+		if( ubah_pendaftar_beasiswa($_POST) > 0 ){
 			echo "
 				<script>
 					alert('Data berhasil diubah');
@@ -46,6 +46,8 @@
     <meta name="author" content="">
 
     <title>Admin | Beasiswa</title>
+
+    <?php include "favicon.html"; ?>
 
     <!-- CSS BOOTStrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -98,19 +100,36 @@
     				  <input type="hidden" name="id" value="<?php echo $bea['id_bea']; ?>">
                       <div class="form-group">
                         <label class="col-form-label" for="nama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $bea['nama']; ?>" required>
+                        <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $bea['nama']; ?>" readonly>
                       </div>
                       <div class="form-group">
                         <label class="col-form-label" for="nim">NIM</label>
-                        <input type="text" class="form-control" name="nim" id="nim" value="<?php echo $bea['nim']; ?>" required>
+                        <input type="text" class="form-control" name="nim" id="nim" value="<?php echo $bea['nim']; ?>" readonly>
                       </div>
                       <div class="form-group">
                         <label class="col-form-label" for="tanggal_lahir">Tanggal Lahir</label>
-                        <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" value="<?php echo $bea['tanggal_lahir']; ?>" required>
+                        <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" value="<?php echo $bea['tanggal_lahir']; ?>" readonly>
                       </div>
                       <div class="form-group">
                         <label class="col-form-label" for="jenis_kelamin">Jenis Kelamin</label>
-                        <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" value="<?php echo $bea['jenis_kelamin']; ?>" required>
+                        <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" value="<?php echo $bea['jenis_kelamin']; ?>" readonly>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-form-label" for="gaji">Gaji Ortu/bln</label>
+                        <input type="text" class="form-control" name="gaji" id="gaji" value="<?php echo $bea['gaji']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label class="col-form-label" for="saudara">Saudara</label>
+                        <input type="text" class="form-control" name="saudara" id="saudara" value="<?php echo $bea['saudara']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label class="col-form-label" for="jurusan">Jurusan</label>
+                        <input type="text" class="form-control" name="jurusan" id="jurusan" value="<?php echo $bea['jurusan']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label class="col-form-label" for="ipk">IPK</label>
+                        <input type="text" class="form-control" name="ipk" id="ipk" value="<?php echo $bea['ipk']; ?>">
                       </div>
                       <div class="form-group">
                         <button class="btn btn-lg btn-primary" type="submit" name="submit">

@@ -26,6 +26,8 @@
 
     <title>Beasiswa | Tentang</title>
 
+    <?php include "favicon.html"; ?>
+    
     <!-- CSS BOOTStrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 

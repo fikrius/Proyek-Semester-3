@@ -24,6 +24,8 @@
 
     <title>Admin | Beasiswa</title>
 
+    <?php include "favicon.html"; ?>
+
     <!-- CSS BOOTStrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -31,7 +33,7 @@
     <link href="assets/css/dasbor.css" rel="stylesheet">
 
     <!-- Data Tables -->
-    <link href="assets/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="assets/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="assets/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
   </head>
@@ -75,17 +77,18 @@
     <!-- Akhir Navigation -->
 
     <!-- Tabel Jumlah User yang membuat akun -->
-    <section class="jumlah-user">
+    <section class="jumlah-user" style="margin-top: 5rem;">
       <div class="container mt-5">
         <div class="row-md-12">
-          <table id="table_feedback" class="table table-hover">
+          <table id="feed" class="table table-hover">
             <thead>
-              <tr>
+              
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Email</th>
                 <th scope="col">Feedback</th>
-              </tr>
+                <th scope="col">Aksi</th>
+              
             </thead>
 
             <tbody>
@@ -108,16 +111,21 @@
     </section>
     <!-- Akhir tabel -->
 
-    <script type="text/javascript">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+
+    <script>
       $(document).ready(function(){
-          $('#table_feedback').DataTable();
-      })
+          $('#feed').DataTable();
+      });
     </script>
 
     <!-- Footer -->
-    <?php include "footer.php" ?>
+    <?php include "footer.php" ;?>
     <!-- Akhir Footer -->
 
     <!-- Include dataTables  -->
     <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="assets/datatables/js/dataTables.bootstrap.js"></script>
+    <script src="assets/datatables/js/dataTables.bootstrap.min.js"></script>
+
+    

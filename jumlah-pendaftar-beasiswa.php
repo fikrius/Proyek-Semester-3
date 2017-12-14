@@ -27,6 +27,8 @@
 
     <title>Admin | Beasiswa</title>
 
+    <?php include "favicon.html"; ?>
+
     <!-- CSS BOOTStrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -78,8 +80,8 @@
     <!-- Akhir Navigation -->
 
     <!-- Tabel Jumlah User yang membuat akun -->
-    <section class="jumlah-user">
-      <div class="container mt-5">
+    <section class="jumlah-user" style="margin-top: 5rem; height: 40rem;">
+      <div class="container-fluid mt-5">
         <div class="row-md-12">
           <table id="table_user" class="table table-hover">
             <thead>
@@ -89,7 +91,11 @@
                 <th scope="col">Nim</th>
                 <th scope="col">Tanggal Lahir</th>
                 <th scope="col">Jenis Kelamin</th>
-                <th scope="col">Aksi</th>
+                <th scope="col">Gaji Ortu/bln</th>
+                <th scope="col">Saudara</th>
+                <th scope="col">Jurusan</th>
+                <th scope="col">IPK</th>
+                <th class="text-center" scope="col">Aksi</th>
               </tr>
             </thead>
 
@@ -100,19 +106,25 @@
 	                  <td><?php echo $i; ?></td>
 	                  <td><?php echo $row['nama']; ?></td>
 	                  <td><?php echo $row['nim']; ?></td>
-	                  <td><?php echo $row['tanggal_lahir']; ?></td>
-	                  <td><?php echo $row['jenis_kelamin']; ?></td>
-	                  <td><a href="ubah_pendaftar_beasiswa.php?id_bea=<?php echo $row['id_bea']; ?>" class="btn btn-primary">Ubah</a> | <a href="hapus_pendaftar_beasiswa.php?id_bea=<?php echo $row['id_bea']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data?')">Hapus</a></td>
+	                  <td class="text-center"><?php echo $row['tanggal_lahir']; ?></td>
+	                  <td class="text-center" ><?php echo $row['jenis_kelamin']; ?></td>
+                    <td class="text-center"><?php echo $row['gaji']; ?></td>
+                    <td class="text-center" ><?php echo $row['saudara']; ?></td>
+                    <td><?php echo $row['jurusan']; ?></td>
+                    <td class="text-center" ><?php echo $row['ipk']; ?></td>
+	                  <td class="text-center"><a href="ubah-pendaftar-beasiswa.php?id_bea=<?php echo $row['id_bea']; ?>" class="btn btn-primary">Ubah</a> | <a href="hapus-pendaftar-beasiswa.php?id_bea=<?php echo $row['id_bea']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data?')">Hapus</a></td>
 	                </tr>
 	            	<?php $i++; ?>
             	<?php endwhile; ?>
-            	
             </tbody>
           </table>
         </div>
       </div>
     </section>
     <!-- Akhir tabel -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
 
     <script>
       $(document).ready(function(){

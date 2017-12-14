@@ -27,6 +27,8 @@
 
     <title>Admin | Beasiswa</title>
 
+    <?php include "favicon.html"; ?>
+
     <!-- CSS BOOTStrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -34,7 +36,7 @@
     <link href="assets/css/dasbor.css" rel="stylesheet">
 
     <!-- Data Tables -->
-    <link href="assets/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="assets/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="assets/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
   </head>
@@ -78,31 +80,31 @@
     <!-- Akhir Navigation -->
 
     <!-- Tabel Jumlah User yang membuat akun -->
-    <section class="jumlah-user">
+    <section class="jumlah-user" style="margin-top: 5rem;">
       <div class="container mt-5">
         <div class="row-md-12">
           <table id="table_user" class="table table-hover">
             <thead>
-              <tr>
+              
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
-                <th scope="col">Nim</th>
-                <th scope="col">Tanggal Lahir</th>
-                <th scope="col">Jenis Kelamin</th>
-                <th scope="col">Aksi</th>
-              </tr>
+                <th class="text-center" scope="col">Nim</th>
+                <th class="text-center" scope="col">Tanggal Lahir</th>
+                <th class="text-center" scope="col">Jenis Kelamin</th>
+                <th class="text-center" scope="col">Aksi</th>
+              
             </thead>
 
             <tbody>
             	<?php $i = 1; ?>
-            	<?php while($row = mysqli_fetch_assoc($result)): ?>
+            	<?php while($row = mysqli_fetch_assoc($result) ): ?>
 	                <tr>
 	                  <td><?php echo $i; ?></td>
 	                  <td><?php echo $row['nama']; ?></td>
-	                  <td><?php echo $row['nim']; ?></td>
-	                  <td><?php echo $row['tanggal_lahir']; ?></td>
-	                  <td><?php echo $row['jenis_kelamin']; ?></td>
-	                  <td><a href="ubah.php?id_mhs=<?php echo $row['id_mhs']; ?>" class="btn btn-primary">Ubah</a> | <a href="hapus_user.php?id_mhs=<?php echo $row['id_mhs']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data?')">Hapus</a></td>
+	                  <td class="text-center"><?php echo $row['nim']; ?></td>
+	                  <td class="text-center"><?php echo $row['tanggal_lahir']; ?></td>
+	                  <td class="text-center"><?php echo $row['jenis_kelamin']; ?></td>
+	                  <td class="text-center"><a href="ubah.php?id_mhs=<?php echo $row['id_mhs']; ?>" class="btn btn-primary">Ubah</a> | <a href="hapus_user.php?id_mhs=<?php echo $row['id_mhs']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data?')">Hapus</a></td>
 	                </tr>
 	            	<?php $i++; ?>
             	<?php endwhile; ?>
@@ -114,16 +116,19 @@
     </section>
     <!-- Akhir tabel -->
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+
     <script>
       $(document).ready(function(){
           $('#table_user').DataTable();
-      })
+      });
     </script>
 
     <!-- Footer -->
-    <?php include "footer.php" ?>
+    <?php include "footer.php" ;?>
     <!-- Akhir Footer -->
 
     <!-- Include dataTables  -->
     <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="assets/datatables/js/dataTables.bootstrap.js"></script>
+    <script src="assets/datatables/js/dataTables.bootstrap.min.js"></script>

@@ -159,6 +159,7 @@
 		$jurusan = $data['jurusan'];
 		$semester = htmlspecialchars($data['semester']);
 		$ipk = htmlspecialchars($data['ipk']);
+		$tunjangan = $gaji/$saudara;
 
 		// cek apakah nim sudah terdaftar atau belum
 	    $sql2 = "SELECT * FROM bea WHERE nim='$nim'";
@@ -188,6 +189,7 @@
    				jurusan = '$jurusan',
    				semester = '$semester',
    				ipk = '$ipk',
+   				tunjangan = '$tunjangan',
 		       fk_id_mhs = (
 			       SELECT id_mhs
 			         FROM akun

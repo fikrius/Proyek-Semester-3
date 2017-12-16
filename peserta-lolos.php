@@ -8,7 +8,7 @@
 
 	require "controller/functions.php";
 	//Menampilkan semua data mahasiswa di tabel akun
-	$sql = "SELECT * FROM bea";
+	$sql = "SELECT * FROM bea WHERE ipk>3.5 ORDER BY tunjangan ASC LIMIT 10";
 	$result = mysqli_query($conn, $sql);
 
   //jumlah feedback
@@ -97,7 +97,6 @@
                 <th scope="col">Smt</th>
                 <th scope="col">IPK</th>
                 <th scope="col">Tunjangan</th>
-                <th class="text-center" scope="col">Aksi</th>
               </tr>
             </thead>
 
@@ -116,13 +115,12 @@
                     <td class="text-center"><?php echo $row['semester']; ?></td>
                     <td class="text-center" ><?php echo $row['ipk']; ?></td>
                     <td class="text-center" ><?php echo $row['tunjangan']; ?></td>
-	                  <td class="text-center"><a href="ubah-pendaftar-beasiswa.php?id_bea=<?php echo $row['id_bea']; ?>" class="btn btn-primary">Ubah</a> | <a href="hapus-pendaftar-beasiswa.php?id_bea=<?php echo $row['id_bea']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data?')">Hapus</a></td>
 	                </tr>
 	            	<?php $i++; ?>
             	<?php endwhile; ?>
             </tbody>
           </table>
-          <a href="peserta-lolos.php" class="btn btn-success">Peserta Lolos</a>
+          <a href="peserta-lolos.php" class="btn btn-success">Umumkan</a>
         </div>
       </div>
     </section>
